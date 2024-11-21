@@ -53,7 +53,7 @@ func TestAddGetDelete(t *testing.T) {
 	require.NoError(t, err)
 
 	_, err = store.Get(number)
-	require.Error(t, err)
+	require.Equal(t, sql.ErrNoRows, err)
 
 }
 
